@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Pilin - Comparador de Ordenamientos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="tilin.css">
+</head>
+<body>
+  <div id="app">
+    <div class="wrap">
+      <h1>Comparador de Ordenamientos</h1>
+      <p class="muted">Selecciona el tamaño, el escenario y con qué método deseas iniciar. Se ejecutarán todos los métodos uno por uno.</p>
+
+      <div class="card">
+        <div class="row">
+          <div>
+            <label for="size">¿Cuántos números de elementos vas a comparar?</label>
+            <select id="size">
+              <option value="100">100</option>
+              <option value="1000">1000</option>
+              <option value="10000">10000</option>
+              <option value="100000">100000</option>
+            </select>
+          </div>
+          <div>
+            <label for="scenario">Escenario</label>
+            <select id="scenario">
+              <option value="ordenado">Ordenado</option>
+              <option value="medianamente">Medianamente ordenado</option>
+              <option value="inversos">Inversos</option>
+            </select>
+          </div>
+          <div>
+            <label for="method">¿Con cuál método prefieres iniciar?</label>
+            <select id="method">
+              <option value="burbuja">Burbuja</option>
+              <option value="insercion">Inserción</option>
+              <option value="seleccion">Selección</option>
+              <option value="quicksort">Quicksort</option>
+              <option value="cubeta">Cubeta</option>
+              <option value="radix">RadixSort</option>
+              <option value="heap">HeapSort</option>
+              <option value="merge">MergeSort</option>
+              <option value="hash">Hashsort</option>
+            </select>
+          </div>
+          <div class="controls">
+            <button id="run">Ejecutar</button>
+            <button id="next" disabled>Siguiente método</button>
+            <button id="showChart" disabled>Ver gráfica</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Resultados</h3>
+        <table id="results">
+          <thead>
+            <tr>
+              <th>Método</th>
+              <th>Tiempo</th>
+              <th>RAM</th>
+              <th>Datos ordenados</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p class="muted">Siguiente metodo: usa el botón “Siguiente método” hasta terminar todos.</p>
+      </div>
+
+      <div class="card" id="summaryCard" style="display:none;">
+        <h3>Resumen de resultados (mejor a peor)</h3>
+        <ol id="summaryList"></ol>
+      </div>
+
+      <div class="card" id="chartCard" style="display:none;">
+        <h3>Gráfica de tiempos por método</h3>
+        <canvas id="chart"></canvas>
+      </div>
+
+      <script src="Xsds.js"></script>
+    </div>
+  </div>
+</body>
+</html>

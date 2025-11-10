@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudokuxx</title>
+  <link rel="stylesheet" href="xx.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="login-view">
+      <div class="card">
+        <h1>Sudokuxx</h1>
+        <label for="username">Usuario</label>
+        <input id="username" type="text" autocomplete="username" placeholder="Tu nombre" />
+        <button id="login-btn">Iniciar sesión</button>
+      </div>
+    </section>
+
+    <section id="game-view" class="hidden">
+      <header class="topbar">
+        <div class="info"><span id="ui-user"></span></div>
+        <div class="info">Nivel: <span id="ui-level"></span> • Sudoku: <span id="ui-round"></span>/5 • Dificultad: <span id="ui-diff"></span></div>
+        <div class="info">Vidas: <span id="ui-lives"></span></div>
+        <div class="info">Tiempo: <span id="ui-time">00:00</span></div>
+      </header>
+
+      <div class="selectors">
+        <label for="difficulty">Selecciona dificultad:</label>
+        <select id="difficulty">
+          <option value="muy_facil">Muy fácil (36-49)</option>
+          <option value="facil">Fácil (32-35)</option>
+          <option value="medio">Medio (28-31)</option>
+          <option value="dificil">Difícil (24-27)</option>
+          <option value="muy_dificil">Muy difícil (17-23)</option>
+        </select>
+        <button id="btn-empezar-nivel">Empezar nivel</button>
+      </div>
+
+      <main class="board-wrap">
+        <div class="boards">
+          <div>
+            <div class="board-title">Sudoku</div>
+            <div id="board" class="board" aria-label="Tablero Sudoku"></div>
+          </div>
+          <div id="admin-panel" class="hidden">
+            <div class="board-title">Solución (admin)</div>
+            <div id="solution-board" class="board" aria-label="Solución Sudoku"></div>
+          </div>
+        </div>
+        <div class="pad">
+          <div class="pad-row">
+            <button class="pad-key" data-k="1">1</button>
+            <button class="pad-key" data-k="2">2</button>
+            <button class="pad-key" data-k="3">3</button>
+            <button class="pad-key" data-k="4">4</button>
+            <button class="pad-key" data-k="5">5</button>
+          </div>
+          <div class="pad-row">
+            <button class="pad-key" data-k="6">6</button>
+            <button class="pad-key" data-k="7">7</button>
+            <button class="pad-key" data-k="8">8</button>
+            <button class="pad-key" data-k="9">9</button>
+            <button class="pad-key" data-k="">Borrar</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="actions">
+        <button id="btn-guardar">Guardar progreso</button>
+        <button id="btn-logout">Cambiar usuario</button>
+        <button id="btn-reiniciar">Reiniciar Sudoku</button>
+        <button id="btn-siguiente">Siguiente Sudoku</button>
+      </footer>
+
+      <section id="ranking-section">
+        <h2>Ranking (menor tiempo)</h2>
+        <div class="ranking-controls">
+          <label for="rank-diff">Dificultad:</label>
+          <select id="rank-diff">
+            <option value="muy_facil">Muy fácil</option>
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+            <option value="muy_dificil">Muy difícil</option>
+          </select>
+          <button id="btn-actualizar-ranking">Actualizar</button>
+        </div>
+        <ol id="leaderboard"></ol>
+      </section>
+
+      <div id="toast" class="toast hidden"></div>
+    </section>
+  </div>
+  <script src="Sudoku.js"></script>
+</body>
+</html>
