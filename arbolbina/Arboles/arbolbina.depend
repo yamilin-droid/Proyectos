@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1765476203 source:c:\users\hp\desktop\goku\arbolbina\main.cpp
+	<iostream>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+	<algorithm>
+
