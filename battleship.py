@@ -1,6 +1,3 @@
-# Batalla Naval 15x15 con colocación manual de barcos
-
-# Definición de barcos: (nombre, tamaño, cantidad, símbolo)
 barcos = [
     ("Portaviones", 5, 1, "🟨"),   # Amarillo
     ("Acorazado", 4, 2, "🟪"),     # Morado
@@ -128,3 +125,4 @@ while True:
         print("\n--- Jugador 2 ataca ---")
         jugar_turno(tablero_mostrar_j2, tablero_j1, 2)
         turno = 1
+
